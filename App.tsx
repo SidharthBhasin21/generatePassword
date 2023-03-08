@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View , TouchableOpacity,TextInput} from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet, Text, View , TouchableOpacity,TextInput,Linking} from 'react-native'
 import React, { useState } from 'react'
 import * as Yup from 'yup'
 import {Formik} from 'formik'
@@ -179,8 +179,10 @@ export default function App() {
           ):null
         }
         <View style = {styles.socialLink}>
-          <TouchableOpacity>
-            <Text>
+          <TouchableOpacity
+          onPress={()=> Linking.openURL("https://github.com/SidharthBhasin21")}
+          >
+            <Text style={styles.socialText}>
               Follow me on Github
             </Text>
           </TouchableOpacity>
@@ -294,8 +296,12 @@ const styles = StyleSheet.create({
     width: 240,
     padding:8,
     borderRadius: 6,
-  marginTop:15,
-  
+    marginTop:20, 
+    justifyContent:'center',
+    alignItems: 'center'
+  },
+  socialText:{
+
   }
 
 })
